@@ -1,0 +1,30 @@
+@import './colors.scss';
+
+
+header {
+    border-bottom: 2px dashed $llight;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        color: $ltext;
+
+        &.icons {
+
+
+            svg {
+                cursor: pointer;
+                color: $ltext;
+            }
+        }
+    }
+
+
+}
