@@ -1,0 +1,193 @@
+@import './colors.scss';
+
+
+
+form {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px dashed $llight;
+    border-radius: .5rem;
+    position: relative;
+
+    h2 {
+        color: $ltext;
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        color: $llight;
+    }
+
+    article {
+
+        @media (width > 600px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+
+        section {
+            height: 100%;
+
+
+
+            div {
+                width: 100%;
+
+                &+div {
+                    margin-top: .5rem;
+                }
+
+
+                &:has(input[type="text"] ~ svg) {
+                    position: relative;
+                    padding: 0;
+                    background: transparent;
+
+                    input {
+                        padding-right: 2.6rem;
+                    }
+
+                    svg {
+                        position: absolute;
+                        bottom: -8px;
+                        right: 10px;
+                        color: $llight;
+                        font-size: 1.75rem;
+                        cursor: pointer;
+                    }
+                }
+
+                label {
+                    font-size: 1.25rem;
+                    text-align: Center;
+                    width: 100%;
+                    display: block;
+                    margin-bottom: .1rem;
+                    color: $ltext;
+                }
+
+                input,
+                select {
+                    font-size: 1.1rem;
+                    width: 100%;
+                    border-radius: .75rem;
+                    padding: .5rem;
+                    background: $lbg;
+                    border: 2px dotted $llight;
+                    color: $ltext;
+                    outline: none;
+
+                    &::placeholder {
+                        opacity: .5;
+                    }
+                }
+
+            }
+
+
+
+
+
+            &:has(div svg) {
+                display: grid;
+                place-items: center;
+
+                div:has(svg, p) {
+                    padding: 1.5rem;
+                    display: grid;
+                    place-items: center;
+                    height: fit-content;
+                    background: $lbg;
+                    border-radius: .75rem;
+
+                    @media (width < 600px) {
+                        margin-top: 1rem;
+                    }
+
+                    svg {
+                        font-size: 2.5rem;
+                        color: $llight;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        color: $ltext;
+                        font-size: 1.25rem;
+                        text-wrap: balance;
+                        text-align: center;
+                    }
+                }
+            }
+
+            ul {
+                padding-left: 1.2rem;
+                font-size: 1.25rem;
+
+                li {
+                    word-wrap: break-word;
+                    word-break: break-word;
+                }
+            }
+        }
+    }
+
+    &>section {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        input {
+            display: none;
+        }
+
+        label {
+            padding: .5rem;
+            background-color: $lbg;
+            border-radius: .75rem;
+            cursor: pointer;
+            transition: 500ms all ease-in-out;
+            border: 2px dotted transparent;
+
+            &:hover {
+                border-color: $llight;
+            }
+
+            svg {
+                color: $llight;
+                margin-right: .5rem;
+            }
+
+        }
+    }
+
+    & div:has(ul) {
+        align-items: center;
+        border: 2px dashed $llight;
+
+        ul {
+            width: 100%;
+            display: block;
+
+        }
+
+        div {
+            border: none;
+            margin: 0 !important;
+            padding: 0 !important;
+            grid-template-columns: 100px 1fr;
+            align-items: center;
+
+
+        }
+    }
+}
