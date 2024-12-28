@@ -8,7 +8,7 @@ export default function Header({ gettheme, settheme, setcreate }) {
 
 
     return (
-        <header className={gettheme ? "dark" : null}>
+        <header>
             <div>
                 <FontAwesomeIcon icon={faPaw} size="xl" />
                 <h1>TaskTiger</h1>
